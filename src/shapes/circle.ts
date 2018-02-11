@@ -1,12 +1,18 @@
-import { Geometry } from '../geometry';
-import { Point } from '../types';
+import { Geometry } from '../geometry/index';
+import { Point } from '../types/index';
 
-export default class Circle extends Geometry {
+interface CircleInterface {
+  constitution: Point,
+  material: string, 
+  radius: number,
+}
+
+export default class Circle extends Geometry implements CircleInterface {
   constructor(public constitution: Point, public material: string, public radius: number) {
     super();
   }
 
-  public area() {
-    return Math.PI * Math.pow(this.radius, 2);
+  getRadius(): number {
+    return this.radius;
   }
 }

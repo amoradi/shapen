@@ -1,5 +1,5 @@
-import { Geometry } from '../geometry';
-import { Vertices } from '../types';
+import { Geometry } from '../geometry/index';
+import { Vertices } from '../types/index';
 
 export default class Polygon extends Geometry {
   constructor(public constitution: Vertices, public material: string) {

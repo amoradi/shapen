@@ -1,16 +1,14 @@
-import { Constitution, Material } from '../types';
+import { Constitution, Material, GeometryInterface } from '../types/index';
 
-export abstract class Geometry {
+export abstract class Geometry implements GeometryInterface {
   public constitution: Constitution;
   public material: Material;
 
   public getConstitution(): Constitution {
-    console.log(this.constitution);
     return this.constitution;
   }
 
   public getMaterial(): Material {
-    console.log(this.material);
     return this.material;
   }
 }
