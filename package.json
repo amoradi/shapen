@@ -1,0 +1,15 @@
+{
+  "name": "shapen",
+  "version": "1.0.0",
+  "description": "gimme some shapes",
+  "scripts": {
+    "build": "webpack"
+  },
+  "author": "Aaron Moradi",
+  "license": "ISC",
+  "devDependencies": {
+    "ts-loader": "^3.5.0",
+    "typescript": "^2.7.1",
+    "webpack": "^3.11.0"
+  }
+}
