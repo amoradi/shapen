@@ -1,4 +1,5 @@
-import { Constitution, Material, GeometryInterface } from '../types/index';
+import { Constitution, Material } from '../types/index';
+import { GeometryInterface } from '../interfaces/index'
 
 export abstract class Geometry implements GeometryInterface {
   public constitution: Constitution;

@@ -1,10 +1,6 @@
 import { Geometry } from '../geometry/index';
 import { Point } from '../types/index';
-
-interface CircleInterface { 
-  radius: number,
-  getRadius(): number
-}
+import { CircleInterface } from '../interfaces/index';
 
 export default class Circle extends Geometry implements CircleInterface {
   constructor(public constitution: Point, public material: string, public radius: number) {
