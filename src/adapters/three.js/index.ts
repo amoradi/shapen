@@ -1,8 +1,9 @@
 import * as three from 'three';
 
+import { pointFactory } from '../../helpers/index';
 import Circle from '../../shapes/circle';
 
-class toThreeCircle {
+class CircleToThreeJsAdapter {
   circle: Circle;
 
   constructor(circle: Circle) {
@@ -20,6 +21,7 @@ class toThreeCircle {
 }
 
 export default {
+  pointFactory,
   Circle,
-  toThreeCircle
+  CircleToThreeJsAdapter
 }
