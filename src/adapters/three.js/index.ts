@@ -2,7 +2,7 @@ import * as three from 'three';
 
 import { Vertices } from '../../types/index';
 import { ThreeJsAdapter } from '../../interfaces/adapters';
-import { pointFactory } from '../../helpers/index';
+import { point } from '../../helpers/index';
 import Circle from '../../shapes/circle';
 import Polygon from '../../shapes/polygon';
 import { Geometry } from '../../geometry/index';
@@ -69,7 +69,7 @@ class PolygonToThreeJsAdapter extends ToThreeJsAdapter {
 }
 
 export default {
-  pointFactory,
+  point,
   Circle,
   CircleToThreeJsAdapter,
   Polygon,
