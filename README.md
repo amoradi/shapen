@@ -14,16 +14,18 @@ type Line = [ Point, Point ];
 type Vertices = [ Point, Point, Point ];
 
 type Planes = Vertices[];
+
+type Constitution = Point | Vertices | Planes;
 ```
 
 ## Shapes
 
-Circle
+**Circle**
 - `constitution: Point`
 - `material: string`
 - `radius: number`
 
-Polygon
+**Polygon**
 - `constitution: Vertices`
 - `material: string`
 
