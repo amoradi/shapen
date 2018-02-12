@@ -44,7 +44,7 @@ class PolygonToThreeJsAdapter extends ToThreeJsAdapter {
 
     // TODO: submit an issue for "geometry.setFromPoints" isn't exposed
     // geometry.setFromPoints(this.geometry.getConstitution());
-    let vertices: Vertices = this.geometry.getConstitution();
+    const vertices: Vertices = this.geometry.getConstitution();
     
     vertices.forEach(v => {
       geometry.vertices.push(new three.Vector3(v.x, v.y, v.z));
@@ -62,7 +62,8 @@ class PolygonToThreeJsAdapter extends ToThreeJsAdapter {
       if (third === 0 || ii === 3) break;
     };
 
-    let material = new three.MeshBasicMaterial( { color: "rgb(255, 0, 0)" } );   
+    const color = parseInt(`0x${this.geometry.getMaterial()}`);
+    const material = new three.MeshBasicMaterial({ color });   
     return new three.Mesh(geometry, material);
   }
 }
