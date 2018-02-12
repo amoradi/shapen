@@ -42,43 +42,27 @@ class PolygonToThreeJsAdapter extends ToThreeJsAdapter {
   call() {
     let geometry = new three.Geometry();
 
-    //geometry.setFromPoints(this.geometry.getConstitution());
+    // TODO: submit an issue for "geometry.setFromPoints" isn't exposed
+    // geometry.setFromPoints(this.geometry.getConstitution());
     let vertices: Vertices = this.geometry.getConstitution();
     
     vertices.forEach(v => {
       geometry.vertices.push(new three.Vector3(v.x, v.y, v.z));
     });
 
-    // square
-    // 0 1 2 3
-    // =======
-    // 0 1 2
-    // 2 3 0
+    for (let cnt = 0, i = 0, ii = vertices.length, iii = ii % 3; i < ii + iii; i += 2, cnt++) {
+      let first: number = i >= ii ? 0 : i;
+      let second: number = i + 1 >= ii ? 0 : i + 1;
+      let third: number = i + 2 >= ii ? 0 : i + 2;
 
-    // pentagon
-    // 0 1 2 3 4
-    // =========
-    // 0 1 2
-    // 2 3 4
-    // 4 0 1
-    // 2 3 4
-    // 0 1 2
-    
-    for (let i = 0, ii = vertices.length, iii = ii % 3; i < ii + iii; i += 2) {
-      // 0
-      
-      // 7
+      if (first === 0 && cnt > 0) break;
 
-      // 0, 1, 2
-      // 2, 3, 4
-      // 4, 5, 0
-      // 0, 1, 2
-      // 8     
+      geometry.faces.push(new three.Face3(first, second, third));
+
+      if (third === 0 || ii === 3) break;
     };
 
-    geometry.faces.push( new three.Face3( 0, 1, 2 ) );
-
-    var material = new three.MeshBasicMaterial( { color: "rgb(255, 0, 0)" } );   
+    let material = new three.MeshBasicMaterial( { color: "rgb(255, 0, 0)" } );   
     return new three.Mesh(geometry, material);
   }
 }
