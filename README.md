@@ -18,6 +18,7 @@ type Planes = Vertices[];
 type Constitution = Point | Vertices | Planes;
 ```
 
+
 ## Shapes
 
 **Circle**
@@ -28,6 +29,30 @@ type Constitution = Point | Vertices | Planes;
 **Polygon**
 - `constitution: Vertices`
 - `material: string`
+
+
+## Adapters
+
+### Three JS
+
+**CircleToThreeJsAdapter**
+
+```ts
+let myCircle = new Circle(point(0,0,0), "ff0000", 3);
+let circle = new CircleToThreeJsAdapter(myCircle).call();
+```
+
+**PolygonToThreeJsAdapter**
+```ts
+let myPoly = new Polygon([
+  point(-2, 0, 0),
+  point(-2, -2, 0),
+  point(3, -2, 0),
+  point(3, 0, 0),
+  ], "ffffff");
+let poly = new PolygonToThreeJsAdapter(myPoly).call();
+```
+
 
 ## Authors
 
