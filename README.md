@@ -9,7 +9,7 @@ A rudimentary shape library.
 ```ts
 type Point = { x: number, y: number, z: number };
 
-type Line = [Point, Point];
+type Line = [ Point, Point ];
 
 type Vertices = [ Point, Point, Point ];
 
@@ -18,9 +18,11 @@ type Planes = Vertices[];
 
 ## Shapes
 
-`Circles(constitution: Point, material: string, radius: number)`
+```ts
+class Circles(constitution: Point, material: string, radius: number) { ... }
 
-`Polygons(constitution: Vertices, material: string)`
+class Polygons(constitution: Vertices, material: string) { ... }
+```
 
 ## Authors
 
