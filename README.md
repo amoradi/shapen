@@ -18,11 +18,14 @@ type Planes = Vertices[];
 
 ## Shapes
 
-```ts
-class Circles(constitution: Point, material: string, radius: number) { ... }
+Circle
+- `constitution: Point`
+- `material: string`
+- `radius: number`
 
-class Polygons(constitution: Vertices, material: string) { ... }
-```
+Polygon
+- `constitution: Vertices`
+- `material: string`
 
 ## Authors
 
