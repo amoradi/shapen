@@ -4,19 +4,23 @@
 
 A rudimentary shape library.
 
-## Getting Started
+## Primitives
 
-### Prerequisites
+```ts
+type Point = { x: number, y: number, z: number };
 
-### Installing
+type Line = [Point, Point];
 
-## Running the tests
+type Vertices = [ Point, Point, Point ];
 
-## Built With
+type Planes = Vertices[];
+```
 
-## Contributing
+## Shapes
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+`Circles(constitution: Point, material: string, radius: number)`
+
+`Polygons(constitution: Vertices, material: string)`
 
 ## Authors
 
